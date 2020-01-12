@@ -1,5 +1,5 @@
 class Negociacao {
-
+    
     constructor(data, quantidade, valor){
         
         this._data = new Date(data.getTime());
@@ -8,7 +8,7 @@ class Negociacao {
 
         Object.freeze(this);
     }
-    
+     
     get data(){
         return new Date(this._data.getTime());
     }
