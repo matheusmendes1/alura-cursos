@@ -37,7 +37,7 @@
         <button class="btn btn-primary text-center" type="button">
             Importar Negociações
         </button>
-        <button class="btn btn-primary text-center" type="button" onclick="negociacaoController.apaga()" >
+        <button onclick="negociacaoController.apaga()" class="btn btn-primary text-center" type="button">
             Apagar
         </button>
     </div> 
@@ -57,21 +57,6 @@
     <script>
         let negociacaoController = new NegociacaoController();
     </script>
-
-    <script>
-
-        let negociacao = new Proxy(new Negociacao(new Date(), 2, 100), {
-            
-            set: function(target, prop, value, receiver){
-
-                console.log(`a propriedade "${prop}" foi interceptada`);
-                return Reflect.set(target, prop, value, receiver);
-            }
-
-        });
     
-        negociacao.quantidade;
-        negociacao.valor;
-    </script>
 </body>
 </html>

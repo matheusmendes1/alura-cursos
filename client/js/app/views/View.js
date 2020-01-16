@@ -6,7 +6,7 @@ class View{
 
     template(){
 
-        throw new Error('O método template deve ser implementado!');
+        throw new Error('O método template deve ser implementado');
     }
 
     update(model){

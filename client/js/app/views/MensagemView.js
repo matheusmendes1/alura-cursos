@@ -1,12 +1,12 @@
-class MensagemView extends View{
-
-    constructor(elemento){
-        super(elemento);
-    }
-
-    template(model){
+class MensagemView extends View {
+    
+    constructor(elemento) {
         
-        return model.texto ? `<p class="alert alert-info">${model.texto}</p>` : '<p> </p>';
+       super(elemento);
     }
-
+    
+   template(model) {
+       
+       return model.texto ? `<p class="alert alert-info">${model.texto}</p>` : '<p></p>';
+   }
 }
