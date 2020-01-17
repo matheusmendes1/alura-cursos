@@ -25,27 +25,21 @@ class NegociacaoController{
         this._limpaFormulario();   
     }
 
-    importaNegociacoes(){
-        
-        let xhr = new XMLHttpRequest();
+    importaNegociacoes() {
 
-        xhr.open('GET', 'negociacoes/semana');
-
-        xhr.onreadystatechange = () => {
-
-            if(xhr.readyState == 4){
-                
-                if(xhr.status == 200){
-                    console.log("Obtendo as negociacoes do servidor");
-                }else{
-                    console.log("Não foi possivel obter as negociacoes do servidor");
-                }
+        let service = new NegociacaoService();
+      
+        service.obterNegociacoesDaSemana((erro,negociacoes) => {
+            if(erro) {
+                this._mensagem.texto = erro;
+                return;
             }
-        }
-
-        xhr.send();
-    }
-
+      
+            negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
+            this._mensagem.texto = 'Negociações importadas com sucesso';
+        });
+      }
+      
     apaga() {
 
         this._listaNegociacoes.esvazia();
