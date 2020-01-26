@@ -1,8 +1,45 @@
-.imagem-carrossel {
+.imagem-carrossel-um {
     object-fit: cover;
     object-position: 0 80%;
+    height: 600px;
+}
+
+.imagem-carrossel-dois {
+    object-fit: cover;
+    height: 600px;
 }
 
 .fonte-titulo {
     font-family: 'Pacifico', cursive;
+}
+
+.cor-especial {
+    color: darkred!important;
+}
+
+.botao-cor-especial {
+    background-color: darkred;
+    color: white;
+}
+
+.borda-cor-especial {
+    border-color: darkred;
+}
+
+.card-posicao-imagem {
+    object-fit: cover;
+    object-position: 0 80%;
+    height: 200px;
+}
+
+.card-largura{
+    max-width: 18rem;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.botao-hover:hover{
+    color: black;
 }
