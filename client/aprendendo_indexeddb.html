@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var connection;
+  
+        var openRequest = window.indexedDB.open('aluraframe', 2);
+  
+        openRequest.onupgradeneeded = e =>  {
+
+            console.log('Criando ou atualizando o banco');
+     
+            var minhaConnection = e.target.result;
+            minhaConnection.createObjectStore('negociacoes');
+        };
+  
+        openRequest.onsuccess = e => {
+  
+            console.log('Conexão realizada com sucesso');
+  
+            // e.target.result é uma instância de IDBDatabase
+  
+            connection = e.target.result;
+        };
+  
+        openRequest.onerror = e => {
+  
+            console.log(e.target.error);
+        };
+  
+    </script>
+</body>
+</html>
