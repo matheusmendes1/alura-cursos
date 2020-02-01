@@ -5,19 +5,18 @@
     <title>Negociações</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
-    
 </head>
 <body class="container">
     
     <h1 class="text-center">Negociações</h1>
-
+    
     <div id="mensagemView"></div>
     
-    <form class="form" onsubmit="negociacaoController.adiciona(event)">
+    <form class="form">
         
         <div class="form-group">
             <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>        
+            <input type="text" placeholder="dd/mm/aaaa" id="data" class="form-control" required autofocus/>        
         </div>    
         
         <div class="form-group">
@@ -34,10 +33,7 @@
     </form>
     
     <div class="text-center">
-        <button onclick="negociacaoController.importaNegociacoes()" class="btn btn-primary text-center" type="button">
-            Importar Negociações
-        </button>
-        <button onclick="negociacaoController.apaga()" class="btn btn-primary text-center" type="button">
+        <button class="btn btn-primary text-center" type="button">
             Apagar
         </button>
     </div> 
@@ -46,6 +42,7 @@
     
     <div id="negociacoesView"></div>
     
+<<<<<<< HEAD
     <script src="js/app/models/Negociacao.js"></script>
     <script src="js/app/controllers/NegociacaoController.js"></script>
     <script src="js/app/helpers/DateHelper.js"></script>
@@ -58,8 +55,15 @@
     <script src="js/app/helpers/Bind.js"></script>
     <script src="js/app/services/NegociacaoService.js"></script>
     <script src="js/app/services/HttpService.js"></script>
+=======
+    <script src="node_modules/systemjs/dist/system.js"></script>
+
+>>>>>>> 90be5118055468a1a4f28c3da283ed9112a7a632
     <script>
-        let negociacaoController = new NegociacaoController();
+        System.defaultJSExtensions = true;
+            System.import('js/app/boot').catch(function(err){
+                console.error(err);
+            });
     </script>
     
 </body>
