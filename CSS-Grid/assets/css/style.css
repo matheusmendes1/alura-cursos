@@ -1,0 +1,44 @@
+/* O pai deve se comportar como Grid */
+/*  
+    Precisamos especificar no código, que nosso template será dividido em áreas, como já sabemos. 
+    Para realizarmos essa especificação, usaremos a propriedade grid-template-areas, quer receberá as strings cabecalho, conteudo e rodape. 
+    Feito isso, ainda temos algumas configurações adicionais a serem realizadas. 
+    Uma delas é especificar qual será o tamanho das colunas e linhas do site, e isso será feito por meio de grid-template-columns. 
+    Como utilizaremos apenas uma coluna, definiremos como auto. Em seguida, definiremos o tamanho das linhas via grid-template-rows
+
+    ainda precisamos explicitar para o Grid que um cabeçalho é de fato um cabeçalho e deve se relacionar com a classe cabecalho, por exemplo
+*/
+
+.app {
+    background: #f1f1f1;
+    display: grid;  
+    font-family: Arial, Helvetica, sans-serif;
+
+    grid-template-areas:
+        "cabecalho"
+        "conteudo"
+        "rodape";
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto auto;
+}
+
+.cabecalho {
+    align-items: center;
+    display: flex;
+    grid-area: cabecalho;
+    padding: 0 2rem;
+}
+ 
+.conteudo {
+    grid-area: conteudo;
+    padding: 0 2rem;
+}
+
+.rodape {
+    grid-area: rodape;
+    background: #fdfdfd;
+    color: #333333;
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+}
